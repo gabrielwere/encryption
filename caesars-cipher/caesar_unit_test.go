@@ -146,8 +146,8 @@ func TestDecrypt(t *testing.T) {
 		},
 		{
 			name:    "empty_string",
-			input:   " ",
-			output:  " ",
+			input:   "",
+			output:  "",
 			key:     3,
 			wantErr: false,
 		},
