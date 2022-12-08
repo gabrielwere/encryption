@@ -1,4 +1,4 @@
-package caesacipher_test
+package caesarscipher_test
 
 import (
 	"testing"
@@ -48,6 +48,20 @@ func TestEncrypt(t *testing.T) {
 			input:   "gabriel",
 			key:     5,
 			output:  "LFGWNJQ",
+			wantErr: false,
+		},
+		{
+			name:    "sentence_with_spaces",
+			input:   "attack at dawn",
+			output:  "DWWDFN DW GDZQ",
+			key:     3,
+			wantErr: false,
+		},
+		{
+			name:    "empty_string",
+			input:   " ",
+			output:  " ",
+			key:     3,
 			wantErr: false,
 		},
 		{
@@ -121,6 +135,20 @@ func TestDecrypt(t *testing.T) {
 			input:   "LFGWNJQ",
 			key:     5,
 			output:  "GABRIEL",
+			wantErr: false,
+		},
+		{
+			name:    "sentence_with_spaces",
+			input:   "DWWDFN DW GDZQ",
+			output:  "ATTACK AT DAWN",
+			key:     3,
+			wantErr: false,
+		},
+		{
+			name:    "empty_string",
+			input:   " ",
+			output:  " ",
+			key:     3,
 			wantErr: false,
 		},
 		{
