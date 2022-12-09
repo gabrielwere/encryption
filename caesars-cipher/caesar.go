@@ -19,7 +19,7 @@ func Encrypt(plaintext string, key int) (string, error) {
 	for _, letter := range plaintext {
 		if unicode.IsSpace(letter) {
 			ciphertext += " "
-		} else if num := ((int(letter) - 65) + key) % 26; unicode.IsLetter(letter) && num >= 0 && num <= 25 {
+		} else if num := ((int(letter) - 'A') + key) % 26; unicode.IsLetter(letter) && num >= 0 && num <= 25 {
 			ciphertext += alphabet[num]
 		} else {
 			return "", fmt.Errorf("Input is not in the alphabet")
@@ -36,7 +36,7 @@ func Decrypt(ciphertext string, key int) (string, error) {
 	for _, letter := range ciphertext {
 		if unicode.IsSpace(letter) {
 			plaintext += " "
-		} else if num := ((int(letter) - 65) - key) % 26; unicode.IsLetter(letter) && num >= 0 && num <= 25 {
+		} else if num := ((int(letter) - 'A') - key) % 26; unicode.IsLetter(letter) && num >= 0 && num <= 25 {
 			plaintext += alphabet[num]
 		} else {
 			return "", fmt.Errorf("Input is not in the alphabet")

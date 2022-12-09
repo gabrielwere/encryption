@@ -24,7 +24,7 @@ func Encrypt(plaintext string) (string, error) {
 		if unicode.IsSpace(letter) {
 			ciphertext += " "
 		} else if unicode.IsLetter(letter) {
-			ciphertext += alphabet[90-letter]
+			ciphertext += alphabet['Z'-letter]
 		} else {
 			return "", fmt.Errorf("Input is not part of English alphabet")
 		}
