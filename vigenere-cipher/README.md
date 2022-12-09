@@ -1,6 +1,6 @@
 ### VIGENERE CIPHER
 
-Atbash encryption algorithm in Go.<br>
+Vinegere encryption algorithm in Go.<br>
 The algorithm assumes characters being encrypted are part of the English alphabet i.e (A-Z)(a-z).<br>
 
 
