@@ -15,6 +15,8 @@ func TestEncrypt(t *testing.T) {
 		output  int64
 		wantErr bool
 	}{
+		//small prime numbers were carefully selected to avoid
+		//exceeding the maximum size of the int64 datatype
 		{
 			name:    "case_1",
 			input:   2,
@@ -65,6 +67,8 @@ func TestDecrypt(t *testing.T) {
 		output  int64
 		wantErr bool
 	}{
+		//small prime numbers were carefully selected to avoid
+		//exceeding the maximum size of the int64 datatype
 		{
 			name:    "case_1",
 			input:   29,
